@@ -24,6 +24,13 @@ func main() {
 	}
 
 	jim.print()
+	jimPointer := &jim
+	jimPointer.updateName("Jimmy")
+	jim.print()
+}
+
+func (pointerPerson *person) updateName(newFirstName string) {
+	(*pointerPerson).firstName = newFirstName
 }
 
 func (p person) print() {
